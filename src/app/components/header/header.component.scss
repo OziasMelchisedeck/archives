@@ -1,0 +1,44 @@
+@import "../../../styles.scss";
+
+nav{
+    height: $header-height;
+    width: 100%;
+    background: white;
+    position: fixed;
+    color: $primary-color;
+    z-index: 3;
+}
+.initial{
+    border: solid 1px $primary-color;
+    border-radius: 50%;
+    background-color: rgb($primary-color, 0.5);
+    color: white;
+}
+.active{
+    text-decoration: underline;
+}
+.options{
+    width: 30%;
+}
+ a{
+    text-decoration: none;
+ }
+ .connect{
+    cursor: pointer;
+ }
+ .menu{
+    position: absolute;
+    right: 0.5rem;
+    top:4rem;
+    width: 10rem;
+    background-color: white;
+    box-shadow:2px 2px 5px silver;
+    button{
+        background-color: rgb($primary-color, 0.7);
+        color: white;
+        &:hover{
+            background-color: $primary-color;
+            font-weight: bolder;
+        }
+    }
+ }

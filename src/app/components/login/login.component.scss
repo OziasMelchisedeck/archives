@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+section{
+    padding-top: $header-height;
+    height: 90vh;
+    form{
+        margin: 3rem;
+        width: 22rem;
+        height: 22rem;
+        box-shadow:2px 2px 5px rgb($primary-color, 0.1);
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-top:solid 5px $primary-color ;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom:solid 5px $primary-color ;
+        .form-control{
+            width: 80%;
+        }
+        button{
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+}

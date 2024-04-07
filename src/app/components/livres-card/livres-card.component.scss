@@ -1,0 +1,20 @@
+@import "../../../styles.scss";
+
+section{
+    height:20rem;
+    width: 15rem;
+    border-bottom: solid 1rem $primary-color;
+    border-top: solid 0.5rem $primary-color;
+    box-shadow:2px 2px 5px silver;
+    cursor: pointer;
+    .image{
+        height: 50%;
+        background: url("../../../assets/images.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    label, .label{
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,89 @@
+<section class="d-flex flex-column align-items-center">
+    <div *ngIf="response!=''" class="d-flex justify-content-center my-3">
+        <div class="d-flex justify-content-between border close p-2">
+            <span class="h6">{{response}}</span>
+            <button (click)="close()" class="btn btn-danger">X</button>
+        </div>
+    </div>
+    <form [formGroup]="registerForm" (change)="validateForm()" class="form register d-flex flex-column p-3 m-4">
+        <div class="personnel d-flex flex-column pt-3 ">
+            <div class="text-center title1 h6">Informations personnelles</div>
+            <div class="nomPrenom d-flex flex-wrap justify-content-between p-2  mt-2">
+                <div class="d-flex justify-content-between p-2 m-2 nom ">
+                    <label class="">Nom</label>
+                    <input [formControl]="nomCtrl" type="text" class="form-control required-field" required title="Ce champ est requis">
+                </div>
+                <div class="prenom d-flex m-2 justify-content-between p-2 ">
+                    <label class="">Prenom</label>
+                    <input [formControl]="prenomCtrl" type="text" class="form-control required-field" required title="ce champ est requis">
+                </div>
+            </div>
+
+            <div class="loginEmail d-flex justify-content-between flex-wrap p-2 mt-2 ">
+                <div class="d-flex justify-content-between p-2 m-2 login">
+                    <label class="">Login</label>
+                    <input [formControl]="loginCtrl" type="text" class="form-control required-field" required title="ce champ est requis"/>
+                </div>
+                <div class="d-flex justify-content-between p-2 m-2 email">
+                    <label class="">Email</label>
+                    <input [formControl]="emailCtrl" type="email" class="form-control required-field" required title="ce champ est requis" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+                </div>
+            </div>
+
+            <div class="passwordC d-flex justify-content-between flex-wrap p-2 mt-2 ">
+                <div class="d-flex justify-content-between p-2 m-2 password ">
+                    <label class="">Password</label>
+                    <input [formControl]="passwordCtrl" type="password" class="form-control required-field" required title="ce champ est requis" minlength="8">
+                </div>
+                <div class="d-flex justify-content-between p-2 m-2 cpassword border">
+                    <label class="">Confirm password</label>
+                    <input [formControl]="cpassworCtrl" type="password" class="form-control required-field" required title="ce champ est requis" minlength="8">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column pt-3 preferences  mt-4">
+            <div class="text-center h6 title2">Préférences</div>
+            <div class="d-flex auteurGenres justify-content-between flex-wrap p-2 m-2">
+                <div class="d-flex auteurs justify-content-between p-2 m-2">
+                    <label class="">Auteurs</label>
+                    <select [formControl]="auteursCtrl" class="form-control" multiple>
+                        <option *ngFor="let autor of Auteurs.sort()">{{autor}}</option>
+                    </select>
+                </div>
+                <div class="d-flex genres justify-content-between p-2 m-2 ">
+                    <label class="">Genres</label>
+                    <select [formControl]="genresCtrl" class="form-control" multiple>
+                        <option *ngFor="let genre of Genres.sort()">{{genre}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex continentsPays justify-content-between flex-wrap  p-2 m-2">
+                <div class="d-flex continents justify-content-between  p-2 m-2">
+                    <label class="">Continents</label>
+                    <select [formControl]="continentsCtrl" class="form-control" multiple>
+                        <option *ngFor="let continent of Continents.sort()">{{continent}}</option>
+                    </select>
+                </div>
+                <div class="d-flex pays justify-content-between  p-2 m-2">
+                    <label class="">Pays</label>
+                    <select [formControl]="paysCtrl" class="form-control" multiple>
+                        <option *ngFor="let pays of Pays.sort()">{{pays}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex anneesC justify-content-center flex-wrap  p-2 m-2">
+                <div class="d-flex annees justify-content-between  p-2 m-2">
+                    <label class="">Années</label>
+                    <select [formControl]="anneesCtrl" class="form-control" multiple>
+                        <option *ngFor="let annee of Annees.sort()">{{annee}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex envoi justify-content-center mt-4">
+            <button *ngIf="valid" (click)="creer()" class="btn submit">Creer</button>
+        </div>
+    </form>
+</section>

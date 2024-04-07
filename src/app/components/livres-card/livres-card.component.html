@@ -1,0 +1,11 @@
+<section (click)="goToSingle()" class="card d-flex flex-column p-2">
+    <div class="image">
+    </div>
+    <div class="info m-2">
+       <label class="h6">Titre : </label> <span class="h6">{{livre.Title | titlecase}}</span><br/>
+        <label class="h6">Auteur : </label><span class="h6">{{livre.Creator}}</span><br/>
+        <label class="h6">Date : </label><span class="h6" >{{livre.Date | date :"dd-MMMM-YYYY"}}</span><br/>
+        <label class="h6">Autres : </label><span class="h6">{{livre.Autres}}</span><br/>
+        <span class="h6 label"><img src="../../../assets/view.png" width="40" height="40"/> {{livre.Vues}} vues</span>
+    </div>
+</section>

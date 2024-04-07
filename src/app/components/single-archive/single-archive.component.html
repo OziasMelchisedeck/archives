@@ -1,0 +1,50 @@
+<section class="d-flex">
+    <div class="livre-info d-flex flex-column align-items-center border p-3 m-3">
+        <div class="image d-flex justify-content-center align-items-center">
+            <img src="../../../assets/images.jpg" width="100px" height="100px"/>
+        </div>
+        <div class="d-flex">
+            <label class="h6">Titre :</label>
+            <span class="px-2">{{livre.Title | titlecase}}</span>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+            <label class="h6">Extrait</label>
+            <p class="extrait p-2">{{livre.Extrait}}</p>
+        </div>
+        <div class="d-flex ">
+            <label class="h6">Auteur:</label>
+            <span class="px-2">{{livre.Creator | titlecase}}</span>
+        </div>
+        <div class="d-flex ">
+            <label class="h6">Date :</label>
+            <span class="px-2">{{livre.Date| date :"dd-MMMM-YYYY"}}</span>
+        </div>
+        <div class="d-flex">
+            <label class="h6">Autres :</label>
+            <span class="px-2">{{livre.Autres}}</span>
+        </div>
+        <span class="h6 label"><img src="../../../assets/view.png" width="40" height="40"/> {{livre.Vues}} vues</span>
+        <div class="d-flex">
+            <label class="h6">Prix :</label>
+            <span class="px-2">{{price}} FCFA</span>
+        </div>
+        <button class="btn buy">Acheter l'archive</button>
+    </div>
+    <div class="part-reco align-items-center d-flex flex-column p-3 m-3">
+        <label class="h4 p-2 mb-5 title">Suggestions</label>
+        <div class="d-flex justify-content-evenly">
+            <label class="h6 mt-2 mx-2">Type : </label>
+            <select [formControl]="typeCtrl" class="p-2 ml-2 form-control mb-3">
+                <option class="h6">Général</option>
+                <option class="h6">Les plus vus</option>
+                <option class="h6">Les plus récents</option>
+            </select>
+        </div>
+        <div class="contain-reco p-2 d-flex flex-wrap justify-content-evenly border">
+            <div *ngFor="let elt of resultats" (click)="changeLivre(elt.livre)" class="d-flex flex-column mb-3 align-items-center text-center p-1 pick">
+                <img src="../../../assets/livre1.jpg" width="70" height="70"/>
+                <label class="h6">{{elt.livre.Title | titlecase}}</label>
+            </div>
+        </div>
+    </div>
+</section>

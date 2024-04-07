@@ -1,0 +1,59 @@
+@import "../../../styles.scss";
+
+section{
+    padding-top: $header-height;
+    margin-bottom: 4rem;
+    height: 100%;
+    label{
+        color: $primary-color;
+    }
+    .livre-info{
+        width: 60%;
+        height: 90%;
+        background: rgb($primary-color, 0.2);
+        border-radius: 1rem;
+    .image{
+        // border: solid 1px $primary-color;
+        background-color: white;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        box-shadow:2px 2px 5px silver;
+    }
+    .buy{
+        width: 10rem;
+        color:white;
+        background-color: rgb($primary-color, 0.7);
+    }
+    }
+    .part-reco{
+        width: 40%;
+        height: 100%;
+        .title{
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border-bottom: solid 5px $primary-color;
+        }
+        select{
+            border-right: solid 3px rgb($primary-color, 0.7);
+            width: 8rem;
+            cursor: pointer;
+        }
+        .pick{
+            height: 9rem;
+            width: 7rem;
+            border-radius: 0.1rem;
+            border-bottom-left-radius: 0.1rem;
+            border-bottom-right-radius: 0.1rem;
+            border-bottom: solid 5px $primary-color;
+            box-shadow:2px 2px 5px silver;
+            background-color: white;
+            cursor: pointer;
+        img{
+            border-radius: 50%;
+        }
+        }.contain-reco{
+            background-color: $silver;
+        }
+    }
+}

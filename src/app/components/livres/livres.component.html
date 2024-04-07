@@ -1,0 +1,30 @@
+<section>
+    <div class="header d-flex justify-content-evenly p-3">
+        <div class="h1 texte">
+            Consulter toutes<br/><br/>
+            les archives ...
+        </div>
+        <div class="image"></div>
+    </div>
+    <div class="search-option p-3 d-flex justify-content-evenly mb-3">
+        <select [formControl]="critereCtrl" (change)="getFiltres()" class="p-2 form-control critere">
+            <option disabled>Critères</option>
+            <option>Genres</option>
+            <option>Auteurs</option>
+            <option>Pays</option>
+            <option>Continents</option>
+            <option>Annees</option>
+            <option>None</option>
+        </select>
+        <select  [formControl]="filtreCtrl" class="p-2 form-control filtre">
+            <option disabled>Filtres</option>
+            <option *ngFor="let elt of filtres" class="h6">{{elt}}</option>
+        </select>
+        <input type="search" [formControl]="searchCtrl" placeholder="Rechercher une archive" class="p-2 form-control search text-center">
+        <button (click)="search()" class="btn follow h6 mt-2">Apply</button>
+    </div>
+    <div class="text-center mt-4"><span class="h5"><label>{{resultats.length}}</label> Archives trouvées</span> <span *ngIf="isUser" class="h5"> pour l'utilisateur <label>{{user.Nom + " "+ user.Prenom | titlecase}}</label></span></div>
+    <div class="livres-container mx-4 my-2 p-2 d-flex flex-wrap justify-content-between align-items-center" >
+        <app-livres-card *ngFor="let livre of resultats" [livre]="livre" class="my-3"></app-livres-card>
+    </div>
+</section>

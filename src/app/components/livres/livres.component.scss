@@ -1,0 +1,50 @@
+@import "../../../styles.scss";
+
+section{
+    padding-top: $header-height;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
+    // padding-bottom: 2rem;
+    height: 100%;
+    .header{
+        background-color: $silver;
+        height: 45%;
+        .texte{
+            font-weight: bolder;
+        }
+        .image{
+            background: url("../../../assets/biblio.jpg");
+            width: 40%;
+            background-size: contain;
+        }
+    }
+    .search-option{
+        width: 80%;
+        margin-left: 10%;
+        .form-control{
+            border: solid 2px $primary-color;
+        }
+        .critere{
+            width: 20%;
+        }
+        .filtre{
+            width: 30%;
+        }
+        .search{
+            width: 40%;
+        }
+        .follow{
+            background-color: $primary-color;
+            color: white;
+        }
+        select{
+            cursor: pointer;
+        }
+    }
+    .livres-container{
+        height: max-content;
+    }
+    label{
+        color: $primary-color;
+    }
+}

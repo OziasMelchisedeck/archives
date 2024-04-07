@@ -1,0 +1,53 @@
+@import "../../../styles.scss";
+
+section{
+    padding-top: $header-height;
+    height: 100%;
+    .close{
+        color: white;
+        position: fixed;
+        width: 15em;
+        border-radius: 5px;
+        background: rgb($primary-color, 0.7);
+        button{
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+    form{
+        width: 80%;
+        // margin-top: 3rem;
+        box-shadow:2px 2px 5px rgb($primary-color, 0.1);
+        color: $primary-color;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-top:solid 5px $primary-color ;
+        margin: 5rem;
+        .required-field {
+            border: 2px solid $primary-color;
+          }
+        .preferences, .personnel{
+            background: rgb($primary-color, 0.1);
+            border-radius: 5px;
+        }
+        .nomPrenom, .loginEmail, .passwordC, .continentsPays, .auteurGenres, .anneesC{
+            height: max-content;
+           
+            .nom,.prenom,.login,.email,.password,.cpassword,.pays, .continents, .genres,.auteurs,.annees{
+                width: 20rem;
+                background: rgb($primary-color, 0.6);
+                color: white;
+                border-radius: 5px;
+                font-weight: bolder;
+                .form-control{
+                    width: 15rem;
+                }
+            }
+        }
+        .submit{
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+}
